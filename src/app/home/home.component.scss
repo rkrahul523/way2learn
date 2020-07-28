@@ -26,7 +26,8 @@ img {
 @media only screen and (max-width: 450px) {
 
     .way-to-lern { 
-       font-size: 2em; 
+        font-size: 2.8em;
+        margin-left: 19%;
     }
  
  }
@@ -41,6 +42,34 @@ img {
 
     .welcome-learning-plat{ 
        font-size: 1em; 
+    }
+ 
+ }
+ @media only screen and (max-width: 450px) {
+
+    .full-address{ 
+       font-size: .6em; 
+       margin-left: 20%;
+
+    }
+ 
+ }
+ @media only screen and (max-width: 450px) {
+
+    .email-id{ 
+       font-size: .8em; 
+       margin-left: 22%;
+
+    }
+ 
+ }
+ @media only screen and (max-width: 450px) {
+
+    img{ 
+        margin-left: -1%;
+    margin-top: 3%;
+    width: 21%;
+
     }
  
  }
