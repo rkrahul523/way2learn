@@ -1,3 +1,9 @@
+img {
+    width: 11%;
+    position: absolute;
+    margin-left: 3%;
+
+  }
 .all-data-position{
     text-align: center;
 }
@@ -7,10 +13,12 @@
 }
 .our-present{
     background-color: green;
+    font-size: 2rem;
 }
 .welcome-learning-plat{
     background-color: black;
     color: white;
+    font-size: 2rem;
 }
 .live-class{
     border: 1px solid;
@@ -19,6 +27,20 @@
 
     .way-to-lern { 
        font-size: 2em; 
+    }
+ 
+ }
+ @media only screen and (max-width: 450px) {
+
+    .our-present { 
+       font-size: 1.3em; 
+    }
+ 
+ }
+ @media only screen and (max-width: 450px) {
+
+    .welcome-learning-plat{ 
+       font-size: 1em; 
     }
  
  }
@@ -44,5 +66,5 @@
 .wrapper {
    overflow: hidden;
    max-width: 100%;
-pointer-events: none;
+//pointer-events: none;
 }
