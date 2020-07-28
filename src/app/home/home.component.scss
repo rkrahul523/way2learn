@@ -1,0 +1,24 @@
+.all-data-position{
+    text-align: center;
+}
+.way-to-lern{
+    text-align: center;
+    font-size: 5rem;
+}
+.our-present{
+    background-color: green;
+}
+.welcome-learning-plat{
+    background-color: black;
+    color: white;
+}
+.live-class{
+    border: 1px solid;
+}
+@media only screen and (max-width: 450px) {
+
+    .way-to-lern { 
+       font-size: 2em; 
+    }
+ 
+ }
