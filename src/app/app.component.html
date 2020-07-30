@@ -1,4 +1,4 @@
-<!-- <
+
 
 <router-outlet></router-outlet>
 <div class="container">
@@ -34,5 +34,21 @@ without pipe {{birthday}}
 
 
 
- -->
- <app-home></app-home>
+
+<p>Simple datepicker</p>
+
+<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next" maxDate="{day: 31 , month: 7, year: 2020}"></ngb-datepicker>
+
+<hr/>
+
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Select Today</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">To current month</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2013, month: 2, day: 5})">To Feb 2013</button>
+
+<hr/>
+
+<pre>Month: {{ date.month }}.{{ date.year }}</pre>
+<pre>Model: {{ model | json }}</pre>
+
+ 
+ <!-- <app-home></app-home> -->
