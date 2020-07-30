@@ -9,8 +9,11 @@ import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http'
   providedIn: 'root'
 })
 export class ChatService {
-  // private url = 'http://localhost:5000';
-  private url = 'https://bbtraker.herokuapp.com';
+  private url = !window.location.origin.includes('localhost') ?
+  'https://bbtraker.herokuapp.com'
+  :
+  'http://localhost:5000';
+  // private url = ;
   private socket;    
 
    httpOptions = {
@@ -21,7 +24,7 @@ export class ChatService {
     })
   };
 
-  constructor() {
+  constructor(private http: HttpClient) {
     
       this.socket = io(this.url);
       setTimeout(() => {
@@ -41,6 +44,10 @@ public getMessages = () => {
       observer.next(message);
     });
   });
+}
+
+getIP(){
+  return this.http.get('http://api.ipify.org/?format=json')
 }
 
 }

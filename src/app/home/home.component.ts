@@ -14,17 +14,9 @@ export class HomeComponent implements OnInit {
   constructor(private chatService: ChatService) {
   }
 
-  sendMessage() {
-    this.chatService.sendMessage(this.message);
-    this.message = '';
-  }
+  
   ngOnInit() {
-    this.chatService
-      .getMessages()
-      .subscribe((message: string) => {
-        console.log(message)
-        this.messages.push(message);
-      });
+   
   }
 
 }
