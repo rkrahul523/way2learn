@@ -97,3 +97,13 @@ img {
    max-width: 100%;
 //pointer-events: none;
 }
+
+.blink_me {
+   animation: blinker 2s linear infinite;
+ }
+ 
+ @keyframes blinker {
+   50% {
+     opacity: 0;
+   }
+ }
