@@ -10,6 +10,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChatboxComponent } from './chatbox/chatbox.component';
 import { CommonModule, DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { GoogleformComponent } from './googleform/googleform.component';
+import { LaunchComponent } from './launch/launch.component';
 
 
 
@@ -17,7 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HomeComponent,
-    ChatboxComponent
+    ChatboxComponent,
+    GoogleformComponent,
+    LaunchComponent
   ],
   imports: [
     BrowserModule,
