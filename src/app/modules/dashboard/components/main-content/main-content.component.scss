@@ -1,0 +1,136 @@
+.carouselimage {
+    background-size: cover;
+}
+
+.extra-div {
+    background: #fff;
+    border: medium none;
+    padding: 50px! important;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.extra-div:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    transform: translateY(-15px);
+}
+.commonimagesize{
+    height: 25vh;
+    width: 25vh;
+}
+.date-journeys{
+    text-align: center;
+    
+}
+.vision-nlp-process-dev-tittle{
+    font-size: 1.3rem;
+    position: absolute;
+}
+.aikefi-subhesder-title{
+    font-size: 2rem;
+    text-align: center;
+}
+
+#img3{
+    margin-left:30px !important;
+}
+.carousel-caption {
+    position: absolute;
+    top: 225px;
+    left: 60px;
+    text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+    .aikefi-subhesder-title{
+        font-size: 16px;
+    }
+    .vision-nlp-process-dev{
+        // background-color: white;
+    }
+}
+
+
+@media (min-width:1200px){
+    .carousel-caption h3{
+        font-size:20px;
+        width:65%;
+    }
+    .carousel-caption {
+        margin-top: -40px;
+        position: absolute;
+        top: 270px;
+        left: 120px;
+        text-align: left;
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px){
+    .carousel-caption h3{
+        font-size:18px;
+        width:65%;
+    }
+    .carousel-caption {
+        margin-top: -40px;
+        position: absolute;
+        top: 250px;
+        left: 90px;
+        text-align: left;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px){
+    .carousel-caption h3{
+        font-size:15px;
+        width:65%;
+    }
+    .carousel-caption {
+        margin-top: -60px;
+        position: absolute;
+        top: 225px;
+        left: 70px;
+        text-align: left;
+    }
+}
+
+@media (min-width:576px) and (max-width:768px){
+    .carousel-caption h3{
+        font-size:11px;
+        width:60%;
+    }
+    .carousel-caption {
+        margin-top: -120px;
+        position: absolute;
+        top: 225px;
+        left: 60px;
+        text-align: left;
+    }
+}
+
+@media  (min-width:400px) and (max-width:575px) {
+    .carousel-caption h3{
+        font-size:9px;
+        width:65%;
+    }
+    .carousel-caption {
+        margin-top: -130px;
+        position: absolute;
+        top: 200px;
+        left: 45px;
+        text-align: left;
+    }
+}
+
+@media (max-width:399px) {
+    .carousel-caption h3{
+        font-size:6px;
+        width:60%;
+    }
+    .carousel-caption {
+        margin-top: -100px;
+        position: absolute;
+        top: 150px;
+        left: 40px;
+        text-align: left;
+    }
+}

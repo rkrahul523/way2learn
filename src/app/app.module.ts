@@ -13,7 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { GoogleformComponent } from './googleform/googleform.component';
 import { LaunchComponent } from './launch/launch.component';
 
-
+import { MainLaunchComponent} from './modules/dashboard/components/launch/main-launch.component'
+import { HeaderComponent} from './modules/dashboard/components/header/header.component'
+import { FooterComponent} from './modules/dashboard/components/footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +23,10 @@ import { LaunchComponent } from './launch/launch.component';
     HomeComponent,
     ChatboxComponent,
     GoogleformComponent,
-    LaunchComponent
+    LaunchComponent,
+    MainLaunchComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
