@@ -18,7 +18,8 @@ import { HeaderComponent} from './modules/dashboard/components/header/header.com
 import { FooterComponent} from './modules/dashboard/components/footer/footer.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StaticsComponent } from './components/statics/statics.component';
-import { BillHomeComponent } from './components/bill-home/bill-home.component'
+import { BillHomeComponent } from './components/bill-home/bill-home.component';
+import { UserFormComponent } from './components/user-form/user-form.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BillHomeComponent } from './components/bill-home/bill-home.component'
     FooterComponent,
     DashboardComponent,
     StaticsComponent,
-    BillHomeComponent
+    BillHomeComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

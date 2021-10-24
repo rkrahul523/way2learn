@@ -1,0 +1,78 @@
+<div class="card m-3">
+    <h5 class="card-header">Bill Calculator</h5>
+    <div class="card-body">
+        <form [formGroup]="registerForm" >
+            <div class="form-row">
+                
+                <div class="form-group col-5">
+                    <label>First Name</label>
+                    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>Last Name</label>
+                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="form-row">
+            <div class="form-group col-5">
+                <label>Area</label>
+                <select formControlName="area" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.area.errors }">
+                    <!-- <option value=""></option> -->
+                    <option value="Religarha">Religarha</option>
+                    <option value="Argada">Argada</option>
+                    <option value="Washery Colony">Washery Colony</option>
+                    <!-- <option value="Ms"></option> -->
+                </select>
+                <div *ngIf="submitted && f.area.errors" class="invalid-feedback">
+                    <div *ngIf="f.area.errors.required">Area is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>identifier</label>
+                <input type="text" formControlName="identifier" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.identifier.errors }" />
+                <div *ngIf="submitted && f.identifier.errors" class="invalid-feedback">
+                    <div *ngIf="f.identifier.errors.required">identifier is required</div>
+                    <!-- <div *ngIf="f.area.errors.email">Email must be a valid email address</div> -->
+                </div>
+            </div>
+            
+            </div>
+            <div class="form-row">
+                <div class="form-group col-5">
+                    <label>Bill Type</label>
+                    <select formControlName="billType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.billType.errors }">
+                        <!-- <option value=""></option> -->
+                        <option value="CREDIT">CREDIT</option>
+                        <option value="DEBIT">DEBIT</option>
+                        <!-- <option value="Ms"></option> -->
+                    </select>
+                    <div *ngIf="submitted && f.billType.errors" class="invalid-feedback">
+                        <div *ngIf="f.billType.errors.required">billType is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>Amount(in RS)</label>
+                    <input type="number" formControlName="amount" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" />
+                    <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+                        <div *ngIf="f.amount.errors.required">Amount is required</div>
+                        <!-- <div *ngIf="f.area.errors.email">Email must be a valid email address</div> -->
+                    </div>
+                </div>
+                
+                </div>
+           
+           <!-- {{registerForm.value | json}} -->
+            <div class="text-center">
+                <button [ngClass]="f.billType.value== 'CREDIT' ? 'btn btn-success mr-1' : 'btn btn-danger mr-1'" (click)="submitForm()">Credit</button>
+                <button class="btn btn-secondary"  (click)="onReset()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
