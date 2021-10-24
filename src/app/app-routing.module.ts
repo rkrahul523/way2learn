@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LaunchComponent } from './launch/launch.component';
 import { GoogleformComponent } from './googleform/googleform.component';
 import { MainLaunchComponent } from './modules/dashboard/components/launch/main-launch.component';
+import { BillHomeComponent } from './components/bill-home/bill-home.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
 {
@@ -35,9 +37,29 @@ const localRoutes: Routes = [
 ]
 
 
+const billRoutes=[
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: BillHomeComponent,
+    children: [
+      {
+        path: '',
+        component: DashboardComponent
+      }
+    ]
+  }
+
+]
+
+
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(billRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

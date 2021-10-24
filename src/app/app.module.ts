@@ -15,7 +15,10 @@ import { LaunchComponent } from './launch/launch.component';
 
 import { MainLaunchComponent} from './modules/dashboard/components/launch/main-launch.component'
 import { HeaderComponent} from './modules/dashboard/components/header/header.component'
-import { FooterComponent} from './modules/dashboard/components/footer/footer.component'
+import { FooterComponent} from './modules/dashboard/components/footer/footer.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { StaticsComponent } from './components/statics/statics.component';
+import { BillHomeComponent } from './components/bill-home/bill-home.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { FooterComponent} from './modules/dashboard/components/footer/footer.com
     LaunchComponent,
     MainLaunchComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent,
+    StaticsComponent,
+    BillHomeComponent
   ],
   imports: [
     BrowserModule,
