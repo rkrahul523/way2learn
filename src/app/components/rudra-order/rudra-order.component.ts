@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import {ApiService} from 'src/app/services/api.service'
+
 @Component({
   selector: 'app-rudra-order',
   templateUrl: './rudra-order.component.html',
@@ -10,8 +12,8 @@ export class RudraOrderComponent implements OnInit {
 
   registerForm: FormGroup;
   submitted = true;
-
-  constructor(private formBuilder: FormBuilder) { }
+  messagefromBACKEND=null;
+  constructor(private formBuilder: FormBuilder, private api: ApiService) { }
  
 
   ngOnInit(): void {
@@ -27,11 +29,22 @@ export class RudraOrderComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   SubmitMob(){
-
+    this.api.postmob(this.registerForm.value).subscribe((res:any)=>{
+      if(res && res.status== 'success'){
+        this.api.startOrder().subscribe(res=>{
+          console.log(res)
+          this.messagefromBACKEND= res;
+        })
+      }
+      console.log(res)
+    })
   }
 
   SubmitOtp(){
-    
+    this.api.postOTP(this.registerForm.value).subscribe((res:any)=>{
+      if(res && res.status== 'success')
+      console.log(res)
+    })
   }
 
   onReset(){

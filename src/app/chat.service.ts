@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http'
 })
 export class ChatService {
   private url = !window.location.origin.includes('localhost') ?
-  'https://bbtraker.herokuapp.com'
+  'https://bbtracker.onrender.com'
   :
   'http://localhost:5000';
   // private url = ;
