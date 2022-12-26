@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import {ApiService} from 'src/app/services/api.service'
+import { SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-rudra-order',
@@ -13,6 +14,7 @@ export class RudraOrderComponent implements OnInit {
   registerForm: FormGroup;
   submitted = true;
   messagefromBACKEND=null;
+  url:SafeResourceUrl;
   constructor(private formBuilder: FormBuilder, private api: ApiService) { }
  
 
@@ -49,6 +51,10 @@ export class RudraOrderComponent implements OnInit {
 
   onReset(){
  this.registerForm.reset()
+  }
+
+  getImage(){
+    this.api.getImage('URL').subscribe(x => this.url = x)
   }
 
 }
