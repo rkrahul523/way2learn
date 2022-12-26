@@ -7,7 +7,10 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 export class ApiService {
 
 
-   apiURL='http://localhost:5000/';
+   apiURL=!window.location.origin.includes('localhost') ?
+   'https://bbtracker.onrender.com/'
+   :
+   'http://localhost:5000/';;
    postOtpurl='postotp';
    postMoburl='postmob';
    startOrderurl='startOrder';
