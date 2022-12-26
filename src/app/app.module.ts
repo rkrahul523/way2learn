@@ -19,7 +19,8 @@ import { FooterComponent} from './modules/dashboard/components/footer/footer.com
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StaticsComponent } from './components/statics/statics.component';
 import { BillHomeComponent } from './components/bill-home/bill-home.component';
-import { UserFormComponent } from './components/user-form/user-form.component'
+import { UserFormComponent } from './components/user-form/user-form.component';
+import { RudraOrderComponent } from './components/rudra-order/rudra-order.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UserFormComponent } from './components/user-form/user-form.component'
     DashboardComponent,
     StaticsComponent,
     BillHomeComponent,
-    UserFormComponent
+    UserFormComponent,
+    RudraOrderComponent
   ],
   imports: [
     BrowserModule,

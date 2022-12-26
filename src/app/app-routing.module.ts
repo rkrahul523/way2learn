@@ -5,6 +5,7 @@ import { GoogleformComponent } from './googleform/googleform.component';
 import { MainLaunchComponent } from './modules/dashboard/components/launch/main-launch.component';
 import { BillHomeComponent } from './components/bill-home/bill-home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RudraOrderComponent } from './components/rudra-order/rudra-order.component';
 
 const routes: Routes = [
 {
@@ -49,7 +50,7 @@ const billRoutes=[
     children: [
       {
         path: '',
-        component: DashboardComponent
+        component: RudraOrderComponent
       }
     ]
   }
