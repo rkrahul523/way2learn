@@ -6,6 +6,7 @@ import { MainLaunchComponent } from './modules/dashboard/components/launch/main-
 import { BillHomeComponent } from './components/bill-home/bill-home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RudraOrderComponent } from './components/rudra-order/rudra-order.component';
+import { AgGridExampleComponent } from './modules/feature/components/ag-grid-example/ag-grid-example.component';
 
 const routes: Routes = [
 {
@@ -50,7 +51,7 @@ const billRoutes=[
     children: [
       {
         path: '',
-        component: RudraOrderComponent
+        component: AgGridExampleComponent
       }
     ]
   }

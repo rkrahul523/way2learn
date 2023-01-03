@@ -12,7 +12,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { GoogleformComponent } from './googleform/googleform.component';
 import { LaunchComponent } from './launch/launch.component';
-
+import {AgGridModule} from 'ag-grid-angular';
 import { MainLaunchComponent} from './modules/dashboard/components/launch/main-launch.component'
 import { HeaderComponent} from './modules/dashboard/components/header/header.component'
 import { FooterComponent} from './modules/dashboard/components/footer/footer.component';
@@ -21,6 +21,10 @@ import { StaticsComponent } from './components/statics/statics.component';
 import { BillHomeComponent } from './components/bill-home/bill-home.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { RudraOrderComponent } from './components/rudra-order/rudra-order.component'
+
+import { AgGridExampleComponent } from 'src/app/modules/feature/components/ag-grid-example/ag-grid-example.component';
+import { AgGridCheckboxComponent } from 'src/app/modules/feature/components/ag-grid-checkbox/ag-grid-checkbox.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +40,9 @@ import { RudraOrderComponent } from './components/rudra-order/rudra-order.compon
     StaticsComponent,
     BillHomeComponent,
     UserFormComponent,
-    RudraOrderComponent
+    RudraOrderComponent,
+    AgGridExampleComponent,
+    AgGridCheckboxComponent 
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,9 @@ import { RudraOrderComponent } from './components/rudra-order/rudra-order.compon
     NgbModule,
     CommonModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    AgGridModule.withComponents([/*optional Angular Components to be used in the grid*/])
 
   ],
   providers: [DatePipe],

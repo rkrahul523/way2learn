@@ -1,0 +1,41 @@
+
+
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success"  (click)="getAll()">get order</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-danger"  (click)="trigger()">trigger</button>
+    </div>
+</div>
+
+<ag-grid-angular style="width: 90vw; height: 400px;" #agGrid class="ag-theme-balham" [enableSorting]="true" [enableFilter]="true"
+ [rowData]="rowData" [columnDefs]="columnDefs"  
+ 
+ [rowSelection]="rowSelection"
+ [rowGroupPanelShow]="rowGroupPanelShow"
+ [pivotPanelShow]="pivotPanelShow"
+ [enableRangeSelection]="true"
+ [pagination]="true"
+ (gridReady)="onGridReady($event)"
+ 
+ [pagination]="true" >
+</ag-grid-angular>
+
+<div class="example-header">
+    Page Size:
+    <select (change)="onPageSizeChanged()" id="page-size" [(ngModel)]="pageSize">
+      <option value="10" selected="">10</option>
+      <option value="20">20</option>
+      <option value="25">25</option>
+      <option value="100">100</option>
+    </select>
+  </div>
+
+
+
+
+  <div class="image-container text-center">
+    <button class="btn btn-danger text-center"  (click)="getImage()">GET IMAGE</button>
+    <img [src]="url" class="imagecss">
+</div>

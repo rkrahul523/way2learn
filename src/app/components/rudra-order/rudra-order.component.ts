@@ -28,12 +28,26 @@ export class RudraOrderComponent implements OnInit {
   }
 
 
+  getAll(){
+     this.api.getRecords().subscribe((res:any)=>{
+console.log("rr", res)
+     })
+  }
+
+
+  startOrder(){
+  this.api.startOrder(this.registerForm.value).subscribe(res=>{
+    console.log(res)
+    this.messagefromBACKEND= res;
+  })
+}
+
   get f() { return this.registerForm.controls; }
 
   SubmitMob(){
     this.api.postmob(this.registerForm.value).subscribe((res:any)=>{
       if(res && res.status== 'success'){
-        this.api.startOrder().subscribe(res=>{
+        this.api.startOrder(this.registerForm.value).subscribe(res=>{
           console.log(res)
           this.messagefromBACKEND= res;
         })

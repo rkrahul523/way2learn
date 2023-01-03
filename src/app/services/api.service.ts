@@ -16,12 +16,13 @@ export class ApiService {
    'http://localhost:5000/';;
    postOtpurl='postotp';
    postMoburl='postmob';
-   startOrderurl='startOrder';
-   getImageURL='image'
+   startOrderurl='startOrder'//'startOrder';
+   getImageURL='image';
+   getallorder= 'getallRecords'
+   someError= 'someError'
 
   constructor(private http: HttpClient,
     private sanitizer: DomSanitizer) { }
-
 
 
   postOTP(data){
@@ -32,8 +33,12 @@ export class ApiService {
     return this.http.post(this.apiURL+this.postMoburl, data)
   }
 
-  startOrder(){
-    return this.http.get(this.apiURL+this.startOrderurl)
+  startOrder(mob){
+
+    return this.http.post(this.apiURL+this.startOrderurl, {mob})
+  }
+  getRecords(){
+    return this.http.get(this.apiURL+this.getallorder)
   }
   public getImage(url: string=null): Observable<SafeResourceUrl> {
     return this.http
@@ -44,5 +49,9 @@ export class ApiService {
           return this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob); // tell Anuglar to trust this value
         }),
       );
+  }
+
+  saveError(){
+    return this.http.get(this.apiURL+this.someError)
   }
 }
