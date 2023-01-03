@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prod-build": "npm i && ng build --aot --prod"
+    "prod-build": "ng build --aot --prod"
   },
   "engines": {
     "node": "v12.18.2",
