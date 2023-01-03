@@ -23,7 +23,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { RudraOrderComponent } from './components/rudra-order/rudra-order.component'
 
 import { AgGridExampleComponent } from 'src/app/modules/feature/components/ag-grid-example/ag-grid-example.component';
-import { AgGridCheckboxComponent } from 'src/app/modules/feature/components/ag-grid-checkbox/ag-grid-checkbox.component';
+//import { AgGridCheckboxComponent } from 'src/app/modules/feature/components/ag-grid-checkbox/ag-grid-checkbox.component';
 
 
 @NgModule({
@@ -42,7 +42,7 @@ import { AgGridCheckboxComponent } from 'src/app/modules/feature/components/ag-g
     UserFormComponent,
     RudraOrderComponent,
     AgGridExampleComponent,
-    AgGridCheckboxComponent 
+   // AgGridCheckboxComponent 
   ],
   imports: [
     BrowserModule,
