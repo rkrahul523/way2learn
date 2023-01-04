@@ -75,7 +75,7 @@ export class AgGridExampleComponent implements OnInit {
       {
         field: 'athlete',
         minWidth: 10,
-        width: 30,
+        width: 50,
         pinned: 'left',
         checkboxSelection: checkboxSelection,
         headerCheckboxSelection: headerCheckboxSelection,
