@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -21,6 +21,8 @@ export class ApiService {
    getallorder= 'getallRecords'
    someError= 'someError'
 
+   currentTask= new BehaviorSubject(null)
+
   constructor(private http: HttpClient,
     private sanitizer: DomSanitizer) { }
 
@@ -34,7 +36,7 @@ export class ApiService {
   }
 
   startOrder(mob){
-
+   this.currentTask.next(mob)
     return this.http.post(this.apiURL+this.startOrderurl, {mob})
   }
   getRecords(){

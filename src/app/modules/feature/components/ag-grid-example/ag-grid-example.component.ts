@@ -52,7 +52,7 @@ export class AgGridExampleComponent implements OnInit {
   pivotPanelShow
   autoGroupColumnDef
   url
-  currentlyRunningTask=null;
+  currentlyRunningTask=this.api.currentTask;
 
   constructor(private api: ApiService) { }
 
@@ -126,7 +126,7 @@ export class AgGridExampleComponent implements OnInit {
     const mobiles= selectedData.map(e=> e.mobile)
     var i=-1;
     from(mobiles).pipe(
-      tap(e=> this.currentlyRunningTask= e),
+   //   tap(e=> this.currentlyRunningTask= e),
       concatMap((client: any) => this.api.startOrder(client))
       //   (e: any) => concatMap((z: any) => <Observable<any>>this.api.startOrder(e.mobile)))
   )    .subscribe((res: any) => {

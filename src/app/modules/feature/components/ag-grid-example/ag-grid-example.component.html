@@ -33,7 +33,7 @@
   </div>
 
 
-Running for <input type="text" [(ngModel)]="currentlyRunningTask" readonly> 
+Running for {{currentlyRunningTask | async}}
 
 <span class="spinner-border text-success" role="status" *ngIf="currentlyRunningTask">
   <span class="sr-only">Loading...</span>
