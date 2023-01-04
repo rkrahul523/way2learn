@@ -38,8 +38,8 @@
     "tslib": "^2.0.0",
     "typescript": "~3.9.5",
     "zone.js": "~0.10.3",
-    "ag-grid-angular": "^28.0.0",
-    "ag-grid-community": "^28.0.0"
+    "ag-grid-angular": "^25.0.0",
+    "ag-grid-community": "^25.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.4",
