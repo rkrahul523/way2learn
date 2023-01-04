@@ -53,8 +53,7 @@ import { AgGridExampleComponent } from 'src/app/modules/feature/components/ag-gr
     HttpClientModule,
     ReactiveFormsModule,
 
-    AgGridModule.withComponents([/*optional Angular Components to be used in the grid*/])
-
+    AgGridModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
