@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 export class ApiService {
 
 
-   apiURL=!window.location.origin.includes('localhost') ?
+   apiURL=window.location.origin.includes('localhost') ?
    'https://bbtracker.onrender.com/'
    :
    'http://localhost:5000/';;

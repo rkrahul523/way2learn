@@ -52,42 +52,30 @@ export class AgGridExampleComponent implements OnInit {
   pivotPanelShow
   autoGroupColumnDef
   url
+  currentlyRunningTask
 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
 
-    this.defaultColDef = {
-      editable: true,
-      enableRowGroup: true,
-      enablePivot: true,
-      enableValue: true,
-      sortable: true,
-      resizable: true,
-      filter: true,
-      flex: 1,
-    };
-    this.rowSelection = 'multiple';
-    this.rowGroupPanelShow = 'always';
-    this.pivotPanelShow = 'always';
-
+   
     this.columnDefs = [
       {
         field: 'athlete',
         minWidth: 10,
-        width: 50,
+       width: 50,
         pinned: 'left',
         checkboxSelection: checkboxSelection,
         headerCheckboxSelection: headerCheckboxSelection,
       },
-      { headerName: 'MOB', field: 'mobile', width: 100 },
-      { headerName: 'Registered ALready', field: 'alreadyregisted', width: 100 },
+      { headerName: 'MOB', field: 'mobile', width: 140, },
+      { headerName: 'Registered Already', field: 'alreadyregisted', width: 100 },
 
       { headerName: 'Duplicate User', field: 'isduplicate', width: 100 },
       { headerName: 'OTP not Arrived', field: 'otpnotarrived', width: 100 },
       { headerName: 'Wrong OTP', field: 'wrongotp', width: 100 },
       { headerName: 'Error Reason', field: 'Some Error', width: 100 },
-      { headerName: 'lastUpdated', field: 'lastupdated', width: 200 },
+      { headerName: 'lastUpdated', field: 'lastupdated', width: 350 },
     ];
     this.autoGroupColumnDef = {
       headerName: 'Group',
@@ -105,15 +93,15 @@ export class AgGridExampleComponent implements OnInit {
       cellRendererParams: { checkbox: true },
     };
     this.defaultColDef = {
-      editable: true,
-      enableRowGroup: true,
-      enablePivot: true,
-      enableValue: true,
+      editable: false,
+      // enableRowGroup: true,
+      // enablePivot: true,
+      // enableValue: true,
       sortable: true,
       resizable: true,
       filter: true,
-      flex: 1,
-      minWidth: 100,
+      // flex: 1,
+      // minWidth: 100,
     };
     this.rowSelection = 'multiple';
     this.rowGroupPanelShow = 'always';
@@ -138,7 +126,7 @@ export class AgGridExampleComponent implements OnInit {
     const mobiles= selectedData.map(e=> e.mobile)
     var i=-1;
     from(mobiles).pipe(
-      tap(e=> i++),
+      tap(e=> this.currentlyRunningTask= e),
       concatMap((client: any) => this.api.startOrder(client))
       //   (e: any) => concatMap((z: any) => <Observable<any>>this.api.startOrder(e.mobile)))
   )    .subscribe((res: any) => {
@@ -157,7 +145,8 @@ export class AgGridExampleComponent implements OnInit {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
     //console.log(this.gridColumnApi)
-    this.onPageSizeChanged()
+    this.onPageSizeChanged();
+    this.getAll();
   }
 
 
