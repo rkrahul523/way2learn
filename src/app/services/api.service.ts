@@ -53,7 +53,7 @@ export class ApiService {
       );
   }
 
-  saveError(){
-    return this.http.get(this.apiURL+this.someError)
+  saveError(mob){
+    return this.http.get(this.apiURL+this.someError, {params: {mob}})
   }
 }

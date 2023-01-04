@@ -131,9 +131,9 @@ export class AgGridExampleComponent implements OnInit {
       //   (e: any) => concatMap((z: any) => <Observable<any>>this.api.startOrder(e.mobile)))
   )    .subscribe((res: any) => {
      //this.currentlyRunningTask= null;
-
+     this.api.currentTask.next(null);
     if(res &&  res.status== false && res.message=='Some Error Occured'){
-      this.api.saveError().subscribe(r=>console.log(r))
+      this.api.saveError(res.mob).subscribe(r=>console.log(r))
     }
       console.log("trigger",res)
     })
