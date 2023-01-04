@@ -33,9 +33,13 @@
   </div>
 
 
-Running for {{ currentlyRunningTask}}
+Running for <input type="text" [(ngModel)]="currentlyRunningTask" readonly> 
 
-  <div class="image-container text-center mt-3">
+<span class="spinner-border text-success" role="status" *ngIf="currentlyRunningTask">
+  <span class="sr-only">Loading...</span>
+</span>
+
+  <div class="image-container text-center mt-3" >
     <button class="btn btn-danger text-center"  (click)="getImage()">GET IMAGE</button>
     <img [src]="url" class="imagecss">
 </div>
